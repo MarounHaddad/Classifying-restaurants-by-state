@@ -4,15 +4,47 @@ In this work, we use the Yelp research dataset to train classical machine learni
 ## Introduction
 
 <p align="center">
-  <img src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/yelp.png">
+  <img  width="60%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/yelp.png">
 </p>
- <p width = "20% align="center" " ><em>Figure 1 - Data augmentation example for the 4 stars edges.</em></p>
+ <p align="center" " ><em>Figure 1 - Yelp data components and relationships.</em></p>
  
  
 ## Workflow and Dataset
 
+<p align="center">
+<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/kdd.png">
+</p>
+<p align="center" " ><em>Figure 2 - KDD inspired workflow.</em></p>
+ 
+
+<p align="center">
+<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/dataset.png">
+</p>
+<p align="center" " ><em>Figure 3 - dataset tables.</em></p>
+
+<p align="center">
+<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/focalize.png">
+</p>
+<p align="center" " ><em>Figure 3 - We focalize on the Montreal data for analysis.</em></p>
+
 ## Analysis and Feature engineering
 
+<p align="center">
+<img  src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/goldensquarevsvieuxport.png">
+</p>
+<p align="center" " ><em>Figure 4 - Percentage of closed restaurants in the Golden Square area of Montreal Vs the Old Port.</em></p>
+
+<p align="center">
+<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/zonepourcentage.png">
+</p>
+<p align="center" " ><em>Figure 5 - Percentage of closed restaurants per region.</em></p>
+
+
+<p align="center">
+<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/zonepourcentage.png">
+</p>
+<p align="center" " ><em>Figure 5 - Percentage of closed restaurants per region.</em></p>
+                   
 ## Handling missing values
 
 ## Dimensionality reduction
