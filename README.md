@@ -74,7 +74,7 @@ In this work, we use the Yelp research dataset to train classical machine learni
 <p align="center">
 <img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/chain.png">
 </p>
-<p align="center"  ><em>Figure 12 - Trend of the visits to the restaurants for Best vs Worst/Open vs Closed restaurants.</em></p>
+<p align="center"  ><em>Figure 12 - The percentrage of Open Vs Closed restaurants that are part or not of a chain.</em></p>
 
 
 ## Handling missing values
