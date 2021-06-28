@@ -3,6 +3,12 @@ In this work, we use the Yelp research dataset to train classical machine learni
 
 ## Introduction
 
+<p align="center">
+  <img src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/yelp.png">
+</p>
+ <p width = "20% align="center" " ><em>Figure 1 - Data augmentation example for the 4 stars edges.</em></p>
+ 
+ 
 ## Workflow and Dataset
 
 ## Analysis and Feature engineering
