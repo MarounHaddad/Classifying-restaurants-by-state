@@ -55,7 +55,7 @@ First, we start by looking at the stability of the different regions in Montreal
 </p>
 <p align="center"  ><em>Figure 4 - Percentage of closed restaurants per region.</em></p>
 
-When we chart the total number of restaurants to ever open in a zone vs the percentage of closed restaurants in that zone, Figure 4, we notice that there is, to an extent, a positive correlation between the figures. This is normal, since the more restaurants we have in a zone, the more local competition we have and the more the risk for closure will increase. Therefore, we add the following attributes:
+When we chart the total number of restaurants to ever open in a zone vs the percentage of closed restaurants in that zone, Figure 4, we notice that there is, to an extent, a positive correlation between the two numbers. This is normal, since the more restaurants we have in a zone, the more local competition we have and the more the risk for closure will increase. Therefore, we add the following attributes:
 
 - **zone**: The zone of the restaurant in the city
 - **zone_number_restaurants**: The number of restaurants in a zone.
@@ -65,7 +65,7 @@ When we chart the total number of restaurants to ever open in a zone vs the perc
 </p>
 <p align="center"  ><em>Figure 5 - Restaurants per category for the regions of St Catherine and Old Port.</em></p>
 
-However, we notice in Figure 4 that there are two exceptions to the rule: The Old Port and Little Italy. For these two zones, the number of restaurants is high, however, the percentage of closures is relatively low. Therefore, in order to identify the contributing factors for the stability of these zones, we look at the restaurant categories in these zones. We plot the top 10 categories for the open restaurants (blue bars, figure 5). vs the top 10 categories for the closed restaurants (orange bars, figure 5). We notice that for the stable zones, such as Little Italy and the Old Port, the zones are dominated by a certain number of stable categories. For example, French restaurants in the Old Port and Italian restaurants in Little Italy. However, in the unstable regions, such as St Catherine and the Golden Square, we do not have an overly dominant category of restaurants and to an extent all categories are unstable.   
+However, we notice in Figure 4 that there are two exceptions to the rule: The Old Port and Little Italy. For these two zones, the number of restaurants is high, however, the percentage of closures is relatively low. Therefore, in order to identify the contributing factors for the stability of these zones, we look at the restaurant categories per zone. We plot the top 10 categories for open restaurants (blue bars, Figure 5) versus the top 10 categories for closed restaurants (orange bars, Figure 5). We notice that for the stable zones, such as Little Italy and the Old Port, the zones are dominated by a certain number of stable categories. For example, French restaurants in the Old Port and Italian restaurants in Little Italy. However, in the unstable regions, such as St Catherine and the Golden Square, we do not have an overly dominant category and to an extent all categories are unstable.   
 Therefore we add the following attributes:  
 - **categories**: The list of categories for every restaurant.  
 - **category_zone_itersection**: The number of restaurants in the same zone that share at least one category with the restaurant.  
