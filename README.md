@@ -23,14 +23,14 @@ Yelp is a mobile application that allows users to review the enterprises they ha
 <p align="center"  ><em>Table 2 - We focalize on the Montreal data for analysis.</em></p>
 
 
-Yelp offers a dataset for researchers [] that is comprised of 5 XML files. Table 1 details the dataset with the different tables and columns that are of interest to our study.  The dataset covers the US and Canada. We only focus on the enterprises of type restaurants and treat the dataset so it is compatible with our study objectives.  
-- Restaurant: Has the list of restaurants and their characteristics.  
-- User: Has the list of users and their status (Elite or not) and list of friends.  
-- Review: Has the list of reviews written by users for restaurants and the number of stars granted per review. It also contains the reactions made by other users on the review.  
-- Tip: Has the list of tips written by the users for restaurants and the reactions they received.  
-- Checkin: Has the list of visits per restaurant.  
+Yelp offers a dataset for researchers [] that is comprised of 5 XML files. Table 1 details the dataset with the different tables and columns that are of interest to our study.  The dataset covers the US and Canada. We only focus on the enterprises of type restaurants and process the dataset so it is compatible with our study objectives.  
+- **Restaurant**: Has the list of restaurants and their characteristics.  
+- **User**: Has the list of users and their status (Elite or not) and list of friends.  
+- **Review**: Has the list of reviews written by users for restaurants and the number of stars granted per review. It also contains the reactions made by other users on the review.  
+- **Tip**: Has the list of tips written by the users for restaurants and the reactions they received. 
+- **Checkin**: Has the list of visits per restaurant.  
 
-We further focalize on the data of Montreal alone for the analysis and 
+We further focalize on the data of Montreal alone for the analysis that would help us deduce our features for the eventual training of the models. 
 
 <p align="center">
 <img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/kdd.png">
