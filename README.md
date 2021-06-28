@@ -3,7 +3,7 @@ In this work, we use the Yelp research dataset to train classical machine learni
 
 ## Introduction
 
-## Dataset
+## Workflow and Dataset
 
 ## Analysis and Feature engineering
 
@@ -15,6 +15,11 @@ In this work, we use the Yelp research dataset to train classical machine learni
 
 ## Pattern extraction
 
+## Background information
+This work was presented as partial requirement for the course "INF7710 - Théorie et applications de la fouille d’associations" at UQAM (Université du Quebec à Montréal).  
+Maroun Haddad (April 2020).
+
+Complete report and presentation under 
+
 ## References
 
-## Note
