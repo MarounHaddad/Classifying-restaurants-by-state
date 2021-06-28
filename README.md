@@ -48,19 +48,24 @@ We perform a series of queries on the data and deduce the features that would he
 </p>
 <p align="center"  ><em>Figure 3- Percentage of closed restaurants in the Golden Square area of Montreal Vs the Old Port.</em></p>
 
-First, we start by looking at the stability of the different regions in Montreal. By stability, we mean the percentage of restaurants that are closed in a certain region. We divide Montreal into regions that we denote by zones according to the first part of the postal codes in the area (Example, Old Port: H2Y). We notice that some areas are stable, with a low number of closed restaurants, while others have a higher number of closures, Figure 3.
+First, we start by looking at the stability of the different regions in Montreal. By stability, we mean the percentage of restaurants that are closed in a certain region. We divide Montreal into zones according to the first part of the postal codes in the area (for example, Old Port: H2Y). We notice that some zones are stable (Old Port), with a low number of closed restaurants, while others are not stable and have a high number of closures (Golden Square), Figure 3.
 
 <p align="center">
 <img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/zonepourcentage.png">
 </p>
 <p align="center"  ><em>Figure 4 - Percentage of closed restaurants per region.</em></p>
 
+When we chart the total number of restaurants to ever exist in a zone vs the percentage of closed restaurants in a zone, Figure 4, we notice that there is, to an extent, a positive correlation between the two. This is normal, since the more restaurants we have in a zone, the more local competition we have and the more the risk for closure will increase. Therefore, we add the following attributes:
+
+- zone: The zone of the restaurant in the city
+- zone_number_restaurants: The number of restaurants in a zone.
 
 <p align="center">
 <img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/categoryregion.PNG">
 </p>
 <p align="center"  ><em>Figure 5 - Restaurants per category for the regions of St Catherine and Old Port.</em></p>
 
+However, we notice in Figure 4 that there are two exception to the above mentioned rule: The Old Port and Little Italy. For these two zone, the number of restaurants is high
 
 <p align="center">
 <img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/closureyear.png">
