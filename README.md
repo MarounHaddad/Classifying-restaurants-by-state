@@ -30,20 +30,25 @@ Yelp offers a dataset for researchers [] that is comprised of 5 XML files. Table
 - **Tip**: Has the list of tips written by the users for restaurants and the reactions they received. 
 - **Checkin**: Has the list of visits per restaurant.  
 
-We further focalize on the data of Montreal alone for the analysis that would help us deduce our features for the eventual training of the models. 
+We further focalize on the data of Montreal (Table 2) for the analysis that would help us deduce our features for the eventual training of the models.  
 
 <p align="center">
 <img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/kdd.png">
 </p>
 <p align="center"  ><em>Figure 2 - KDD inspired workflow.</em></p>
 
+We loosely follow the KDD (Knowledge Data Discovery) workflow for data mining [], Figure 2. We first start by focalizing on a subset of data. Subsequently, we perform a series of queries to develop our knowledge and further our understanding of the different factors that affect the state of the restaurants. This acquired knowledge would allow us to properly engineer the features for training our models. After building our training dataset, we clean it and reduce its dimensionality. Next, we search for the best-performing models and parameters. Finally, we extract patterns from the data and visualize our results.  
 
 ## Analysis and Feature engineering
+
+We perform a series of queries on the data and deduce the features that would help the training of our models.
 
 <p align="center">
 <img  src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/goldensquarevsvieuxport.png">
 </p>
 <p align="center"  ><em>Figure 3- Percentage of closed restaurants in the Golden Square area of Montreal Vs the Old Port.</em></p>
+
+First, we start by looking at the stability of the different regions in Montreal. By stability, we mean the percentage of restaurants that are closed in a certain region. We divide Montreal into regions that we denote by zones according to the first part of the postal codes in the area (Example, Old Port: H2Y). We notice that some areas are stable, with a low number of closed restaurants, while others have a higher number of closures, Figure 3.
 
 <p align="center">
 <img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/zonepourcentage.png">
