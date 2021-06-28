@@ -8,14 +8,9 @@ In this work, we use the Yelp research dataset to train classical machine learni
 </p>
  <p align="center"   ><em>Figure 1 - Yelp data components and relationships.</em></p>
  
+Yelp is a mobile application that allows users to review the enterprises they have visited, in particular restaurants. The user of Yelp can write reviews about the restaurants they visited and score them on a scale from 1 to 5. Furthermore, they can write tips for other users (For example, bring a jacket when you visit this establishment). They can also inquire about the different categories of restaurants (for example, Bar, pub), cuisines (for example, Chinese, Italian), their location, opening hours, and the services they offer (for example, whether they have delivery or takeout option). The users can also signal their visit to the restaurant with a "Check-in" option. The app also has a small social network experience, where the users can befriend other users and comment/react to their reviews and tips. Yelp also designates some users are "Elite". It is unknown how the selection process of Elite users is made, however, it is suspected that the reviews of the Elite users have more weight than those of regular users. Figure 1 summarizes the components of the Yelp app experience concerning the restaurants.
  
-## Workflow and Dataset
-
-<p align="center">
-<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/kdd.png">
-</p>
-<p align="center"  ><em>Figure 2 - KDD inspired workflow.</em></p>
- 
+## Dataset and Workflow
 
 <p align="center">
 <img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/dataset.png">
@@ -26,6 +21,22 @@ In this work, we use the Yelp research dataset to train classical machine learni
 <img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/focalize.png">
 </p>
 <p align="center"  ><em>Table 2 - We focalize on the Montreal data for analysis.</em></p>
+
+
+Yelp offers a dataset for researchers [] that is comprised of 5 XML files. Table 1 details the dataset with the different tables and columns that are of interest to our study.  The dataset covers the US and Canada. We only focus on the enterprises of type restaurants and treat the dataset so it is compatible with our study objectives.  
+- Restaurant: Has the list of restaurants and their characteristics.  
+- User: Has the list of users and their status (Elite or not) and list of friends.  
+- Review: Has the list of reviews written by users for restaurants and the number of stars granted per review. It also contains the reactions made by other users on the review.  
+- Tip: Has the list of tips written by the users for restaurants and the reactions they received.  
+- Checkin: Has the list of visits per restaurant.  
+
+We further focalize on the data of Montreal alone for the analysis and 
+
+<p align="center">
+<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/kdd.png">
+</p>
+<p align="center"  ><em>Figure 2 - KDD inspired workflow.</em></p>
+
 
 ## Analysis and Feature engineering
 
