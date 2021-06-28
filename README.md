@@ -55,55 +55,55 @@ First, we start by looking at the stability of the different regions in Montreal
 </p>
 <p align="center"  ><em>Figure 4 - Percentage of closed restaurants per region.</em></p>
 
-When we chart the total number of restaurants to ever exist in a zone vs the percentage of closed restaurants in a zone, Figure 4, we notice that there is, to an extent, a positive correlation between the two. This is normal, since the more restaurants we have in a zone, the more local competition we have and the more the risk for closure will increase. Therefore, we add the following attributes:
+When we chart the total number of restaurants to ever open in a zone vs the percentage of closed restaurants in that zone, Figure 4, we notice that there is, to an extent, a positive correlation between the two numbers. This is normal, since the more restaurants we have in a zone, the more local competition we have and the more the risk for closure will increase. Therefore, we add the following attributes:
 
-- zone: The zone of the restaurant in the city
-- zone_number_restaurants: The number of restaurants in a zone.
+- **zone**: The zone of the restaurant in the city
+- **zone_number_restaurants**: The number of restaurants in a zone.
 
 <p align="center">
-<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/categoryregion.PNG">
+<img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/categoryregion.PNG">
 </p>
 <p align="center"  ><em>Figure 5 - Restaurants per category for the regions of St Catherine and Old Port.</em></p>
 
-However, we notice in Figure 4 that there are two exception to the above mentioned rule: The Old Port and Little Italy. For these two zone, the number of restaurants is high
+However, we notice in Figure 4 that there are two exceptions to the rule: The Old Port and Little Italy. For these two zones, the number of restaurants is high, however, the percentage of closures is relatively low. Therefore, in order to identify the contributing factors for the stability of these zones, we look at the restaurant categories per zone. We plot the top 10 categories for open restaurants (blue bars, Figure 5) versus the top 10 categories for closed restaurants (orange bars, Figure 5). We notice that for the stable zones, such as Little Italy and the Old Port, the zones are dominated by a certain number of stable categories. For example, French restaurants in the Old Port and Italian restaurants in Little Italy. However, in the unstable regions, such as St Catherine and the Golden Square, we do not have an overly dominant category and to an extent all categories are unstable.   
+Therefore we add the following attributes:  
+- **categories**: The list of categories for every restaurant.  
+- **category_zone_itersection**: The number of restaurants in the same zone that share at least one category with the restaurant.  
+- **city_zone_itersection**: The number of restaurants in the same city that share at least one category with the restaurant.  
+
 
 <p align="center">
-<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/closureyear.png">
+<img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/closureyear.png">
 </p>
 <p align="center"  ><em>Figure 6 - Number of restaurants closing per Year vs Number of restaurants opening per Year.</em></p>
 
 <p align="center">
-<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/Trendstars.png">
+<img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/Trendstars.png">
 </p>
 <p align="center"  ><em>Figure 7 - Trend of the quality of the restaurants for Best vs Worst/Open vs Closed restaurants.</em></p>
                    
 <p align="center">
-<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/stars.png">
+<img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/stars.png">
 </p>
 <p align="center"  ><em>Figure 8 - Avergage of stars received by Open vs Closed restaurants.</em></p>
                    
 <p align="center">
-<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/tips.png">
+<img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/tips.png">
 </p>
 <p align="center"  ><em>Figure 9 - Average number of tips received by Open vs Closed restaurants.</em></p>
 
 <p align="center">
-<img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/trendcheckin.png">
+<img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/trendcheckin.png">
 </p>
 <p align="center"  ><em>Figure 10 - Trend of the visits to the restaurants for Best vs Worst/Open vs Closed restaurants.</em></p>
 
 <p align="center">
-<img  width="85%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/chain.png">
+<img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/chain.png">
 </p>
 <p align="center"  ><em>Figure 11 - The percentrage of Open Vs Closed restaurants that are part or not of a chain.</em></p>
 
 
 ## Handling missing values
-
-<p align="center">
-<img  width="85%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/chain.png">
-</p>
-<p align="center"  ><em>Table 3 - .</em></p>
 
 ## Dimensionality reduction
 
