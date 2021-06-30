@@ -8,7 +8,7 @@ In this work, we use the Yelp research dataset to train classical machine learni
 </p>
  <p align="center"   ><em>Figure 1 - Yelp data components and relationships.</em></p>
  
-Yelp is a mobile application that allows users to review the enterprises they have visited, in particular restaurants. The user of Yelp can write reviews about the restaurants they visited and score them on a scale from 1 to 5. Furthermore, they can write tips for other users (For example, bring a jacket when you visit this establishment). They can also inquire about the different categories of restaurants (for example, Bar, pub), cuisines (for example, Chinese, Italian), their location, opening hours, and the services they offer (for example, whether they have delivery or takeout option). The users can also signal their visit to the restaurant with a "Check-in" option. The app also has a small social network experience, where the users can befriend other users and comment/react to their reviews and tips. Yelp also designates some users are "Elite". It is unknown how the selection process of Elite users is made, however, it is suspected that the reviews of the Elite users have more weight than those of regular users. Figure 1 summarizes the components of the Yelp app experience concerning the restaurants.
+Yelp is a mobile application that allows users to review the enterprises they have visited, in particular restaurants. The users of Yelp can write reviews about the restaurants they visited and score them on a scale from 1 to 5. Furthermore, they can write tips for other users (For example, bring a jacket when you visit this establishment). They can also inquire about the different categories of restaurants (for example, Bar, pub), cuisines (for example, Chinese, Italian), their location, opening hours, and the services they offer (for example, whether they have delivery or takeout option). The users can also signal their visit to the restaurant with a "Check-in" option. The app also has a small social network experience, where the users can befriend other users and comment/react on their reviews and tips. Yelp also designates some users are "Elite". It is unknown how the selection process of Elite users is made, however, it is suspected that the reviews of the Elite users have more weight than those of regular users. Figure 1 summarizes the components of the Yelp appication concerning the restaurants.
  
 ## Dataset and Workflow
 
@@ -23,9 +23,9 @@ Yelp is a mobile application that allows users to review the enterprises they ha
 <p align="center"  ><em>Table 2 - We focalize on the Montreal data for analysis.</em></p>
 
 
-Yelp offers a dataset for researchers [] that is comprised of 5 XML files. Table 1 details the dataset with the different tables and columns that are of interest to our study.  The dataset covers the US and Canada. We only focus on the enterprises of type restaurants and process the dataset so it is compatible with our study objectives.  
+Yelp offers a dataset for researchers [4] that is comprised of 5 XML files. Table 1 details the dataset with the different tables and columns that are of interest to our study.  The dataset covers the US and Canada. We only focus on the enterprises of type restaurants and process the dataset so it is compatible with our study objectives.  
 - **Restaurant**: Has the list of restaurants and their characteristics.  
-- **User**: Has the list of users and their status (Elite or not) and list of friends.  
+- **User**: Has the list of users and their status (Elite or not) and their list of friends.  
 - **Review**: Has the list of reviews written by users for restaurants and the number of stars granted per review. It also contains the reactions made by other users on the review.  
 - **Tip**: Has the list of tips written by the users for restaurants and the reactions they received. 
 - **Checkin**: Has the list of visits per restaurant.  
@@ -37,7 +37,7 @@ We further focalize on the data of Montreal (Table 2) for the analysis that woul
 </p>
 <p align="center"  ><em>Figure 2 - KDD inspired workflow.</em></p>
 
-We loosely follow the KDD (Knowledge Data Discovery) workflow for data mining [], Figure 2. We first start by focalizing on a subset of data. Subsequently, we perform a series of queries to develop our knowledge and further our understanding of the different factors that affect the state of the restaurants. This acquired knowledge would allow us to properly engineer the features for training our models. After building our training dataset, we clean it and reduce its dimensionality. Next, we search for the best-performing models and parameters. Finally, we extract patterns from the data and visualize our results.  
+We loosely follow the KDD (Knowledge Data Discovery) workflow for data mining [2] - Figure 2. We first start by focalizing on a subset of data. Subsequently, we perform a series of queries to develop our knowledge and further our understanding of the different factors that affect the state of the restaurants. This acquired knowledge would allow us to properly engineer the features for training our models. After building our training dataset, we clean it and reduce its dimensionality. Next, we search for the best-performing models and parameters. Finally, we extract patterns from the data and visualize our results.  
 
 ## Analysis and Feature engineering
 
@@ -48,7 +48,7 @@ We perform a series of queries on the data and deduce the features that would he
 </p>
 <p align="center"  ><em>Figure 3- Percentage of closed restaurants in the Golden Square area of Montreal Vs the Old Port.</em></p>
 
-First, we start by looking at the stability of the different regions in Montreal. By stability, we mean the percentage of restaurants that are closed in a certain region. We divide Montreal into zones according to the first part of the postal codes in the area (for example, Old Port: H2Y). We notice that some zones are stable (Old Port), with a low number of closed restaurants, while others are not stable and have a high number of closures (Golden Square), Figure 3.
+First, we start by looking at the stability of the different regions in Montreal. By stability, we mean the percentage of restaurants that are "closed" in a certain region. We divide Montreal into zones according to the first part of the postal codes in the area (for example, Old Port: H2Y). We notice that some zones are stable (example, Old Port - Figure 3), with a low number of closed restaurants, while others are not stable and have a high number of closures (example, Golden Square - Figure 3).
 
 <p align="center">
 <img  width="65%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/zonepourcentage.png">
@@ -65,7 +65,7 @@ When we chart the total number of restaurants to ever open in a zone vs the perc
 </p>
 <p align="center"  ><em>Figure 5 - Restaurants per category for the regions of St Catherine and Old Port.</em></p>
 
-However, we notice in Figure 4 that there are two exceptions to the rule: The Old Port and Little Italy. For these two zones, the number of restaurants is high, however, the percentage of closures is relatively low. Therefore, to identify the contributing factors for the stability of these zones, we look at the restaurant categories per zone. We plot the top 10 categories for open restaurants (blue bars, Figure 5) versus the top 10 categories for closed restaurants (orange bars, Figure 5). We notice that for the stable zones, such as Little Italy and the Old Port, the zones are dominated by a certain number of stable categories. For example, French restaurants in the Old Port and Italian restaurants in Little Italy. However, in the unstable regions, such as St Catherine and the Golden Square, we do not have an overly dominant category and to an extent all categories are unstable. We conclude that having a unique category as a restaurant or standing out is important in some zones while having a common cuisine or category is important in others. Therefore, we add the following attributes:  
+However, we notice in Figure 4 that there are two exceptions to the rule: The Old Port and Little Italy. For these two zones, the number of restaurants is high, however, the percentage of closures is relatively low. Therefore, to identify the contributing factors for the stability of these zones, we look at the restaurant categories per zone. We plot the top 10 categories for open restaurants (blue bars, Figure 5) versus the top 10 categories for closed restaurants (orange bars, Figure 5). We notice that for the stable zones, such as Little Italy and the Old Port, the zones are dominated by a certain number of stable categories. For example, French restaurants in the Old Port and Italian restaurants in Little Italy. However, in the unstable regions, such as St Catherine and the Golden Square, we do not have an overly dominant category and to an extent all categories are unstable. We conclude that having a unique category is important in some zones to stand out while having a common category or cuisine is important in others. Therefore, we add the following attributes:  
 
 - **categories**: The list of categories for the restaurant (one-hot-encoding).  
 - **zone_category_itersection**: The number of restaurants in the same zone that share at least one category with the restaurant.  
@@ -76,6 +76,7 @@ However, we notice in Figure 4 that there are two exceptions to the rule: The Ol
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/closureyear.png">
 </p>
 <p align="center"  ><em>Figure 6 - Number of restaurants closing per Year vs Number of restaurants opening per Year.</em></p>
+
 Secondly, we look at the number of restaurants opening per year versus the number of restaurants closing per year, Figure 6. We notice that the opening and closing of restaurants follow to an extent a "Boom and Bust" cycle. Where the number of restaurants opening every year increases progressively until it reaches a peak, followed by a series of years with a decline in the number of opening restaurants and an increase in the number of closures. We conclude that the year of opening encodes certain information about the economic state of the city in that year and can help us determine the probability of the restaurant closure in the future. Therefore, we add:   
 
 - **buisiness_first_year**: The opening year for the restaurant.  
@@ -86,7 +87,7 @@ Secondly, we look at the number of restaurants opening per year versus the numbe
 <p align="center">
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/Trendstars.png">
 </p>
-<p align="center"  ><em>Figure 7 - Trend of the quality of the restaurants for Best vs Worst/Open vs Closed restaurants.</em></p>
+<p align="center"  ><em>Figure 7 - Quality trend for Best vs Worst/Open vs Closed restaurants.</em></p>
 
 Next, we look at the trends in the quality of the restaurants over the year. We compare the best restaurants (stars>=4) and the worst restaurants (stars<=2). We also compare the open restaurants versus the closed ones. We notice that the quality of service of the best and open restaurants is more consistent than that of the worst and closed restaurants, as the quality of the latter tends to deteriorate over the years, Figure 7.  
 Therefore we add the following attributes:  
@@ -135,7 +136,7 @@ Therefore, we add the following attributes:
 </p>
 <p align="center"  ><em>Figure 11 - The percentrage of Open Vs Closed restaurants that are part or not of a chain.</em></p>
 
-According to [], the restaurants that are part of a chain are more secure than those that are not. Therefore, we look at the percentage of open versus closed for the chain and nonchain restaurants. For Montreal, we notice that there is not a big difference between the two. However, for North America in general, the restaurant that is part of a chain is 15% more secure than those that are not, Figure 11. Therefore, we add the following attribute:  
+According to [1], the restaurants that are part of a chain are more secure than those that are not. Therefore, we look at the percentage of open versus closed for the chain and nonchain restaurants. For Montreal, we notice that there is not a big difference between the two. However, for North America in general, the restaurant that is part of a chain is 15% more secure than those that are not, Figure 11. Therefore, we add the following attribute:  
 - **is_chain**: If the restaurant is part of a chain or not.  
 
 We also add the following attributes that we consider relevant to the state of the restaurant:  
@@ -192,7 +193,7 @@ Table 5 displays the results of our training. We evaluate the models using the m
 </p>
 <p align="center"  ><em>Figure 13 - Pattern extraction workflow.</em></p>
 
-To extract the patterns, we treat the attributes of every restaurant as a basket. We focus only on the Montreal dataset. For nominal and ordinal attributes we concatenate the name of the attribute with the value (example, is_open_satruday1: The restaurant is open on Saturday). For continuous attributes, we discretize the values with K-binning using a bin size of 3, such as 1: small, 2:medium, and 3:large (example, review_count2: Average number of reviews). We apply FP-Growth [] to extract the patterns, Figure 13.  
+To extract the patterns, we treat the attributes of every restaurant as a basket. We focus only on the Montreal dataset. For nominal and ordinal attributes we concatenate the name of the attribute with the value (example, is_open_satruday1: The restaurant is open on Saturday). For continuous attributes, we discretize the values with K-binning using a bin size of 3, such as 1: small, 2:medium, and 3:large (example, review_count2: Average number of reviews). We apply FP-Growth [3] to extract the patterns, Figure 13.  
 
 To better interpret the patterns, we focus on the zones and filter the rules with "is_closed0" as a consequent, i.e. the restaurants that are open. Properly, we should have filtered "is_closed1" i.e. closed restaurants as consequent. However the closed restaurants are rare in the dataset in comparison to open ones (~20%), therefore, they rarely appear in the rules, and we would have to drastically reduce the minimum support of FP-Growth for them to appear, which renders the results non-representative.  
 
@@ -226,4 +227,7 @@ Maroun Haddad (April 2020).
 Complete report and presentation under: **\presentation and report in French**  
 
 ## References
-
+[1] Cassel, D. (2018). Can yelp data predict restaurant closures ? URL: https://thenewstack.io/can-yelp-data-predict-restaurant-closures/  
+[2] Fayyad, U. M., Piatetsky-Shapiro, G. et Smyth, P. (1996). Knowledge discovery and data mining : Towards a unifying framework. In proceedings of the Second International Conference on Knowledge Discovery and Data Mining.  
+[3] Han, J., Pei, J. et Yin, Y. (2000). Mining frequent patterns without candidate generation. In proceedings of the ACM International Conference on Management of Data.  
+[4] yelp (2020). yelp dataset. URL: https://www.yelp.com/dataset  
