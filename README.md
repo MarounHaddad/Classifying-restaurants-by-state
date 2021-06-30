@@ -65,8 +65,8 @@ When we chart the total number of restaurants to ever open in a zone vs the perc
 </p>
 <p align="center"  ><em>Figure 5 - Restaurants per category for the regions of St Catherine and Old Port.</em></p>
 
-However, we notice in Figure 4 that there are two exceptions to the rule: The Old Port and Little Italy. For these two zones, the number of restaurants is high, however, the percentage of closures is relatively low. Therefore, in order to identify the contributing factors for the stability of these zones, we look at the restaurant categories per zone. We plot the top 10 categories for open restaurants (blue bars, Figure 5) versus the top 10 categories for closed restaurants (orange bars, Figure 5). We notice that for the stable zones, such as Little Italy and the Old Port, the zones are dominated by a certain number of stable categories. For example, French restaurants in the Old Port and Italian restaurants in Little Italy. However, in the unstable regions, such as St Catherine and the Golden Square, we do not have an overly dominant category and to an extent all categories are unstable.   
-Therefore we add the following attributes:  
+However, we notice in Figure 4 that there are two exceptions to the rule: The Old Port and Little Italy. For these two zones, the number of restaurants is high, however, the percentage of closures is relatively low. Therefore, to identify the contributing factors for the stability of these zones, we look at the restaurant categories per zone. We plot the top 10 categories for open restaurants (blue bars, Figure 5) versus the top 10 categories for closed restaurants (orange bars, Figure 5). We notice that for the stable zones, such as Little Italy and the Old Port, the zones are dominated by a certain number of stable categories. For example, French restaurants in the Old Port and Italian restaurants in Little Italy. However, in the unstable regions, such as St Catherine and the Golden Square, we do not have an overly dominant category and to an extent all categories are unstable. We conclude that having a unique category as a restaurant or standing out is important in some zones while having a common cuisine or category is important in others. Therefore, we add the following attributes:  
+
 - **categories**: The list of categories for the restaurant (one-hot-encoding).  
 - **zone_category_itersection**: The number of restaurants in the same zone that share at least one category with the restaurant.  
 - **city_category_itersection**: The number of restaurants in the same city that share at least one category with the restaurant.  
@@ -76,6 +76,12 @@ Therefore we add the following attributes:
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/closureyear.png">
 </p>
 <p align="center"  ><em>Figure 6 - Number of restaurants closing per Year vs Number of restaurants opening per Year.</em></p>
+Next, we look at the number of restaurants opening per year versus the number of restaurants closing per year, Figure 6. We notice that the opening and closing of restaurants follow to an extent a "Boom and Bust" cycle. Where the number of restaurants opening every year increases progressively until it reaches a peak, followed by a series of years with a decline in the number of opening restaurants and an increase in the number of closures. We conclude that the year of opening encodes certain information about the economic state of the city in that year and can help us determine the probability of the restaurant closure in the future. Therefore, we add:   
+
+- **buisiness_first_year**: The opening year for the restaurant.  
+- **business_first_year_count**: The number of restaurants opening in the same year with the restaurant.  
+
+*Note: It would have been also beneficial to include the city in the count of restaurants opening per year for more specificity.    
 
 <p align="center">
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/Trendstars.png">
