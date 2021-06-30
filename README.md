@@ -178,14 +178,46 @@ We train seven types of models on the data. We use the following classical machi
 </p>
 <p align="center"  ><em>Table 5 - Test results</em></p>
 
-Table 5 displays the results of our training. We evaluate the models using the metrics: Accuracy and F-measure. We report the best results. The best-performing model is highlighted in bold. We also display the confusion matrices and ROC curves for some of the models, figure 12.
+Table 5 displays the results of our training. We evaluate the models using the metrics: Accuracy and F-measure. We report the best results. The best-performing model is highlighted in bold. We also display the confusion matrices and ROC curves for some of the models: Bagging, MLP, Logistic Regression, and Naive Bayes - figure 12.  
 <p align="center">
-<img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/resultsrocandconf.png">
+<img  src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/resultsrocandconf.png">
 </p>
 <p align="center"  ><em>Figure 12 - Confusion matrix and ROC for 4 models.</em></p>
 
 
 ## Pattern extraction
+
+<p align="center">
+<img  src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/FPGrowth.png">
+</p>
+<p align="center"  ><em>Figure 13 - Pattern extraction workflow.</em></p>
+
+To extract the patterns, we treat the attributes of every restaurant as a basket. We focus only on the Montreal dataset. For nominal and ordinal attributes we concatenate the name of the attribute with the value (example, is_open_satruday1: The restaurant is open on Saturday). For continuous attributes, we discretize the values with K-binning using a bin size of 3, such as 1: small, 2:medium, and 3:large (example, review_count2: Average number of reviews). We apply FP-Growth [] to extract the patterns, Figure 13.  
+
+To better interpret the patterns, we focus on the zones and filter the rules with "is_closed0" as a consequent, i.e. the restaurants that are open. Properly, we should have filtered "is_closed1" i.e. closed restaurants as consequent. However the closed restaurants are rare in the dataset in comparison to open ones (~20%), therefore, they rarely appear in the rules, and we would have to drastically reduce the minimum support of FP-Growth for them to appear, which renders the results non-representative.  
+
+In the following, we present the analysis of some of the zones in Montreal according to the patterns extracted with FP-Growth.  
+
+<p align="center">
+<img  src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/stCatherinepatterns.png">
+</p>
+<p align="center"  ><em>Figure 14 - Patterns of open restaurants in St Catherine area.</em></p>
+
+For the St Catherine area (Downtown), we notice that the rules GoodForKids0, GoodForGroups1, PriceRange2, and Reservation1 are frequent. This indicates that the successful restaurants in this zone are to an extent not family-oriented and are more geared towards groups and tend to be on the expensive side. These facts align with the nature of the zone at Downtown and the types of restaurants we usually find there.  
+
+<p align="center">
+<img  src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/Plateaupatterns.png">
+</p>
+<p align="center"  ><em>Figure 15 - Patterns of open restaurants in the Plateau area.</em></p>
+
+For the Plateau zone, we notice that the restaurants in this area do not need a reservation and offer takeout service. This aligns with the nature of the zone which is "Trendy" and popular with young people.  
+
+<p align="center">
+<img  src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/Chinatownpatterns.png">
+</p>
+<p align="center"  ><em>Figure 16 - Patterns of open restaurants in China Town.</em></p>
+
+For China Town, we notice that the rules that dominate this area are GoodForKids1, OutdoorSeeting0, Delivery0, and Takeout1. These facts align with the touristic nature of the zone where family-friendly restaurants are more likely to succeed. 
 
 ## Background information
 This work was presented as partial requirement for the course "INF7710 - Théorie et applications de la fouille d’associations" at UQAM (University of Quebec at Montreal).  
