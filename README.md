@@ -117,8 +117,7 @@ Then, we look at the average of stars across the years for open and closed resta
 We notice the same trends for the tips, where the open restaurants receive more interactions from the users than the closed ones, Figure 9:  
 - **tips_count**: Total number of tips per restaurant.  
 - **tips_usefull_count**: Number of tips that have received a reaction per restaurant.
-- **tips_elite_count**: Number of tips written by Elite users per restaurant.
-- 
+- **tips_elite_count**: Number of tips written by Elite users per restaurant. 
 
 <p align="center">
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/trendcheckin.png">
@@ -149,8 +148,8 @@ We also add the following attributes that we consider relevant to the state of t
 - **restaurantreservations**: If the restaurant requires a reservation.
 - **restaruantpricerange**: The price range of the items in the restaurant (1: Affordable, 2: Average, 3: Expensive).
 - **outdoorseating**: If the restaurant has outdoor seating.  
-- **goodforkids**: if the restaurant is good for kids and families.  
-- **restaurantdelivery**: if the restaurant offers the option of delivery.
+- **goodforkids**: If the restaurant is good for kids and families.  
+- **restaurantdelivery**: If the restaurant offers the option of delivery.
 
 
 
