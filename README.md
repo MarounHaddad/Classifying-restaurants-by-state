@@ -151,11 +151,12 @@ We also add the following attributes that we consider relevant to the state of t
 - **goodforkids**: If the restaurant is good for kids and families.  
 - **restaurantdelivery**: If the restaurant offers the option of delivery.
 
-
-
 ## Handling missing values
+We handle the missing values of the attributes hierarchically according to the restaurant location and categories. For example, for **total_opening_hours**, we take the average of the opening hours of the restaurants of the same category and in the same zone as the restaurant. If none were found, we take the average opening hours of the restaurants in the same zone. If none were found either, we take the average for all restaurants. 
 
-## Dimensionality reduction
+## Dimensionality reduction  
+
+We apply the Mutual Information method to reduce the dimensionality of the training dataset and take only the top 150 attributes. Table 3 lists the top 10 attributes with their scores.
 
 ## Experimental results
 
