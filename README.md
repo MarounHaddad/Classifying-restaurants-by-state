@@ -158,7 +158,7 @@ We handle the missing values of the attributes hierarchically according to the r
 <p align="center">
 <img  width="35%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/mutualinfoscore.png">
 </p>
-<p align="center"  ><em>Table 3 - Top 10 attributes</em></p>
+<p align="center"  ><em>Table 3 - Top 20 Mutual Info attributes</em></p>
 
 We apply the Mutual Information method to reduce the dimensionality of the training dataset and take only the top 150 attributes. Table 3 lists the top 10 attributes with their scores.
 
