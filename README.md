@@ -97,31 +97,61 @@ Therefore we add the following attributes:
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/stars.png">
 </p>
 <p align="center"  ><em>Figure 8 - Avergage of stars received by Open vs Closed restaurants.</em></p>
-Then, we look at the average of stars across the years for open and closed restaurants. We evaluate three types of reviews, **General**(Written by all users), **Elite** (Written by Elite users), and **Useful** (Reviews that have received reactions from other users). We find that for the three categories, the open restaurants receive better evaluations than the closed ones. We conclude that the quality of service and evaluation of restaurants by the customers play an important role in the continuation of the business. Therefore, we add the following attributes:  
-- review_count: The number of total reviews per restaurant.  
-- **good_reviews_count**: The number of good reviews per restaurant (Stars>=3).  
-- **bad_reviews_count**: The number of bad reviews per restaurant (Stars<3).  
+
+Then, we look at the average of stars across the years for open and closed restaurants. We evaluate three types of reviews, **General** (written by all users), **Elite** (written by Elite users), and **Useful** (reviews that have received reactions from other users). We find that for the three categories, the open restaurants receive better evaluations than the closed ones, Figure 8. We conclude that the quality of service and evaluation of restaurants by the customers play an important role in the continuation of the business. Therefore, we add the following attributes:  
+- **review_count**: The number of total reviews per restaurant.  
+- **good_reviews_count**: The number of good reviews per restaurant (stars>=3).  
+- **bad_reviews_count**: The number of bad reviews per restaurant (stars<3).  
 - **good_reviews_ratio**: The proportion of good reviews out of all reviews per restaurant.
 - **bad_reviews_ration**: The proportion of bad reviews out of all reviews per restaurant.
 - **good_useful_review_count**: The number of good reviews that have received a reaction per restaurant.
 - **bad_useful_review_count**: The number of bad reviews that have received a reaction per restaurant.  
-- **good_elite_review_count**: The number of good reviews written by elite users for the restaurant.
-- **bad_elite_review_count**: The number of bad reviews written by elite users for the restaurant.
+- **good_elite_review_count**: The number of good reviews written by Elite users for the restaurant.
+- **bad_elite_review_count**: The number of bad reviews written by Elite users for the restaurant.
 
 <p align="center">
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/tips.png">
 </p>
 <p align="center"  ><em>Figure 9 - Average number of tips received by Open vs Closed restaurants.</em></p>
 
+We notice the same trends for the tips, where the open restaurants receive more interactions from the users than the closed ones, Figure 9:  
+- **tips_count**: Total number of tips per restaurant.  
+- **tips_usefull_count**: Number of tips that have received a reaction per restaurant.
+- **tips_elite_count**: Number of tips written by Elite users per restaurant.
+- 
+
 <p align="center">
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/trendcheckin.png">
 </p>
 <p align="center"  ><em>Figure 10 - Trend of the visits to the restaurants for Best vs Worst/Open vs Closed restaurants.</em></p>
 
+Furthermore, we analyze the tendency of customers' visits to restaurants across the years. We notice that the average of customer checkins for open restaurants exceeds that of closed restaurants.  
+Therefore, we add the following attributes:  
+- **checkin_count**: Number of checkins per restaurant.  
+- **average_checkin**: The mean of checkins across all years per restaurant.  
+- **std_checkin**: The standard deviation of checkins across all years per restaurant.
+
 <p align="center">
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/chain.png">
 </p>
 <p align="center"  ><em>Figure 11 - The percentrage of Open Vs Closed restaurants that are part or not of a chain.</em></p>
+
+According to [], the restaurants that are part of a chain are more secure than those that are not. Therefore, we look at the percentage of open versus closed for the chain and nonchain restaurants. For Montreal, we notice that there is not a big difference between the two. However, for North America in general, the restaurant that is part of a chain is 15% more secure than those that are not, Figure 11. Therefore, we add the following attribute:  
+- **is_chain**: If the restaurant is part of a chain or not.  
+
+We also add the following attributes that we consider relevant to the state of the restaurant:  
+- **total_opening_hours**: Total number of open hours per week.  
+- **is_open_saturday**: If the restaurant is open on Saturday.  
+- **is_open_sunday**: If the restaurant is open on Sunday.  
+- **is_open_monday**: If the restaurant is open on Monday.  
+- **restauranttakeout**: If the restaurant offers a take-out option.
+- **restaurantgoodforgroops**: If the restaurant is good for groups.
+- **restaurantreservations**: If the restaurant requires a reservation.
+- **restaruantpricerange**: The price range of the items in the restaurant (1: Affordable, 2: Average, 3: Expensive).
+- **outdoorseating**: If the restaurant has outdoor seating.  
+- **goodforkids**: if the restaurant is good for kids and families.  
+- **restaurantdelivery**: if the restaurant offers the option of delivery.
+
 
 
 ## Handling missing values
