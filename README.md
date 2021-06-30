@@ -76,7 +76,7 @@ However, we notice in Figure 4 that there are two exceptions to the rule: The Ol
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/closureyear.png">
 </p>
 <p align="center"  ><em>Figure 6 - Number of restaurants closing per Year vs Number of restaurants opening per Year.</em></p>
-Next, we look at the number of restaurants opening per year versus the number of restaurants closing per year, Figure 6. We notice that the opening and closing of restaurants follow to an extent a "Boom and Bust" cycle. Where the number of restaurants opening every year increases progressively until it reaches a peak, followed by a series of years with a decline in the number of opening restaurants and an increase in the number of closures. We conclude that the year of opening encodes certain information about the economic state of the city in that year and can help us determine the probability of the restaurant closure in the future. Therefore, we add:   
+Secondly, we look at the number of restaurants opening per year versus the number of restaurants closing per year, Figure 6. We notice that the opening and closing of restaurants follow to an extent a "Boom and Bust" cycle. Where the number of restaurants opening every year increases progressively until it reaches a peak, followed by a series of years with a decline in the number of opening restaurants and an increase in the number of closures. We conclude that the year of opening encodes certain information about the economic state of the city in that year and can help us determine the probability of the restaurant closure in the future. Therefore, we add:   
 
 - **buisiness_first_year**: The opening year for the restaurant.  
 - **business_first_year_count**: The number of restaurants opening in the same year with the restaurant.  
@@ -87,12 +87,27 @@ Next, we look at the number of restaurants opening per year versus the number of
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/Trendstars.png">
 </p>
 <p align="center"  ><em>Figure 7 - Trend of the quality of the restaurants for Best vs Worst/Open vs Closed restaurants.</em></p>
-                   
+
+Next, we look at the trends in the quality of the restaurants over the year. We compare the best restaurants (stars>=4) and the worst restaurants (stars<=2). We also compare the open restaurants versus the closed ones. We notice that the quality of service of the best and open restaurants is more consistent than that of the worst and closed restaurants, as the quality of the latter tends to deteriorate over the years, Figure 7.  
+Therefore we add the following attributes:  
+- **std_stars**: The standard deviation of the stars per review across the years.  
+- **trend_stars**: The average of stars of last year minus the average of stars of the first year per restaurant.  
+
 <p align="center">
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/stars.png">
 </p>
 <p align="center"  ><em>Figure 8 - Avergage of stars received by Open vs Closed restaurants.</em></p>
-                   
+Then, we look at the average of stars across the years for open and closed restaurants. We evaluate three types of reviews, **General**(Written by all users), **Elite** (Written by Elite users), and **Useful** (Reviews that have received reactions from other users). We find that for the three categories, the open restaurants receive better evaluations than the closed ones. We conclude that the quality of service and evaluation of restaurants by the customers play an important role in the continuation of the business. Therefore, we add the following attributes:  
+- review_count: The number of total reviews per restaurant.  
+- **good_reviews_count**: The number of good reviews per restaurant (Stars>=3).  
+- **bad_reviews_count**: The number of bad reviews per restaurant (Stars<3).  
+- **good_reviews_ratio**: The proportion of good reviews out of all reviews per restaurant.
+- **bad_reviews_ration**: The proportion of bad reviews out of all reviews per restaurant.
+- **good_useful_review_count**: The number of good reviews that have received a reaction per restaurant.
+- **bad_useful_review_count**: The number of bad reviews that have received a reaction per restaurant.  
+- **good_elite_review_count**: The number of good reviews written by elite users for the restaurant.
+- **bad_elite_review_count**: The number of bad reviews written by elite users for the restaurant.
+
 <p align="center">
 <img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/tips.png">
 </p>
