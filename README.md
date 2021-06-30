@@ -155,10 +155,35 @@ We also add the following attributes that we consider relevant to the state of t
 We handle the missing values of the attributes hierarchically according to the restaurant location and categories. For example, for **total_opening_hours**, we take the average of the opening hours of the restaurants of the same category and in the same zone as the restaurant. If none were found, we take the average opening hours of the restaurants in the same zone. If none were found either, we take the average for all restaurants. 
 
 ## Dimensionality reduction  
+<p align="center">
+<img  width="35%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/mutualinfoscore.png">
+</p>
+<p align="center"  ><em>Table 3 - Top 10 attributes</em></p>
 
 We apply the Mutual Information method to reduce the dimensionality of the training dataset and take only the top 150 attributes. Table 3 lists the top 10 attributes with their scores.
 
 ## Experimental results
+<p align="center">
+<img  width="35%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/Trainingdata.png">
+</p>
+<p align="center"  ><em>Table 4 - Training and test data statistics</em></p>
+
+For all our experiments, we use Pytorch and Scikit-learn libraries on a machine with GPU NVIDIA GeForce GTX 1050 (12 GB).  
+We balance the training and test data such as both classes (open and closed) are equal. Table 4 lists the details of the training and test datasets.  
+
+We train seven types of models on the data. We use the following classical machine learning models: Decision Tree, Random Forst, Bagging, Adaboost, Logistic Regression, and Naive Bayes. We also train a two-layer Neural Network. We use a layer size of 64 with ReLU activation functions and a Dropout of 20%. We train for 500 epochs with a patience of 10. We use the loss function Binray Cross Entroy with the optimizer Adam and a learning rate of 0.01.  
+
+<p align="center">
+<img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/results.png">
+</p>
+<p align="center"  ><em>Table 5 - Test results</em></p>
+
+Table 5 displays the results of our training. We evaluate the models using the metrics: Accuracy and F-measure. We report the best results. The best-performing model is highlighted in bold. We also display the confusion matrices and ROC curves for some of the models, figure 12.
+<p align="center">
+<img  width="80%" src="https://github.com/MarounHaddad/Classifying-restaurants-by-state/blob/main/images/resultsrocandconf.png">
+</p>
+<p align="center"  ><em>Figure 12 - Confusion matrix and ROC for 4 models.</em></p>
+
 
 ## Pattern extraction
 
