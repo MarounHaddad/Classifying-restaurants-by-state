@@ -226,6 +226,11 @@ Maroun Haddad (April 2020).
 
 Complete report and presentation under: **\presentation and report in French**  
 
+The published code only covers the following parts of the work:  
+- Dataset preparation
+- Analysis
+- Pattern extraction
+
 ## References
 [1] Cassel, D. (2018). Can yelp data predict restaurant closures ? URL: https://thenewstack.io/can-yelp-data-predict-restaurant-closures/  
 [2] Fayyad, U. M., Piatetsky-Shapiro, G. et Smyth, P. (1996). Knowledge discovery and data mining : Towards a unifying framework. In proceedings of the Second International Conference on Knowledge Discovery and Data Mining.  
